@@ -1,0 +1,78 @@
+import java.util.Scanner;
+class BankAccount{
+    private String accountHolder;
+    private double balance;
+    
+    BankAccount(String accountHolder,double balance){
+        this.accountHolder=accountHolder;
+        this.balance=balance;
+    }
+    public double getBalance(){
+        return balance;
+    }
+    public void deposit(double amount){
+        if(amount>0){
+         balance=balance+amount;
+        System.out.print("Deposited:Rs."+amount);   
+        }
+        else{
+            System.out.print("Invalid deposit amount");
+        }
+    }
+    public void withdraw(double amount){
+        if(amount>0&&amount<=balance){
+            balance=balance-amount;
+            System.out.print("Withdrawn:Rs."+amount);
+        }
+        else{
+            System.out.print("Invalid Withdrawal");
+        }
+        
+    }
+    
+    public void display() {
+        System.out.println("\n--- Account Details ---");
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Balance: ₹" + balance);
+    }
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter account holder name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter initial balance: ");
+        double initialBalance = sc.nextDouble();
+
+        
+        BankAccount account =
+                new BankAccount(name, initialBalance);
+
+        account.display();
+
+        
+        System.out.print("\nEnter deposit amount: ");
+        double depositAmount = sc.nextDouble();
+
+        account.deposit(depositAmount);
+
+        
+        System.out.print("Enter withdrawal amount: ");
+        double withdrawAmount = sc.nextDouble();
+
+        account.withdraw(withdrawAmount);
+
+        
+        System.out.println("\nFinal Balance: ₹"
+                + account.getBalance());
+
+        sc.close();
+    }
+}

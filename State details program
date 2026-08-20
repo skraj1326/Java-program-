@@ -1,0 +1,69 @@
+class TN {
+    static String sta = "Tamil Nadu";
+    String pm;
+    String cm;
+    String dist_name;
+    int pop;
+
+    public void state_det(String a, String b, String c, int d) {
+        pm = a;
+        cm = b;
+        dist_name = c;
+        pop = d;
+    }
+
+    public void display() {
+        System.out.println("1. PM: " + pm);
+        System.out.println("2. CM: " + cm);
+        System.out.println("3. State Name: " + sta);
+        System.out.println("4. District Name: " + dist_name);
+        System.out.println("5. Population: " + pop);
+        System.out.println();
+    }
+}
+
+class AP {
+    static String sta = "Andhra Pradesh";
+    String pm;
+    String cm;
+    String dist_name;
+    int pop;
+
+    public void state_det(String a, String b, String c, int d) {
+        pm = a;
+        cm = b;
+        dist_name = c;
+        pop = d;
+    }
+
+    public void display() {
+        System.out.println("1. PM: " + pm);
+        System.out.println("2. CM: " + cm);
+        System.out.println("3. State Name: " + sta);
+        System.out.println("4. District Name: " + dist_name);
+        System.out.println("5. Population: " + pop);
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        TN a = new TN();
+        TN b = new TN();
+
+        AP a1 = new AP();
+        AP b1 = new AP();
+
+        a.state_det("Narendra Modi", "Joseph Vijay", "Madurai", 70000);
+        b.state_det("Rahul", "M K Stalin", "TVM", 80000);
+
+        a1.state_det("Rahul", "M K Stalin", "Karnool", 80000);
+        b1.state_det("Narendra Modi", "Joseph Vijay", "Chitoor", 70000);
+
+        a.display();
+        b.display();
+        a1.display();
+        b1.display();
+    }
+}

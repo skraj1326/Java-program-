@@ -1,0 +1,26 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int a=987532;
+        int l,p;
+        boolean flag=true;
+        while((a/10)!=0)
+        {
+            l=a%10;
+            p=((a/10)%10);
+            if(p<l)
+            {
+                flag=false;
+                break;
+                
+            }
+            a=a/10;
+            
+        }
+        if(flag)
+        System.out.print("Descending order");
+        else
+        System.out.print("Not a Descending order");
+    }
+}
